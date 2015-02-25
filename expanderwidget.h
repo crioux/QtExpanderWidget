@@ -8,7 +8,17 @@ class QPushButton;
 class QStackedWidget;
 class QVBoxLayout;
 
-class ExpanderWidget : public QWidget
+#ifdef _WIN32
+#ifdef QTEXPANDERWIDGET_EXPORT
+#define QTEXPANDERWIDGET_DLLIMPEXP __declspec(dllexport)
+#else
+#define QTEXPANDERWIDGET_DLLIMPEXP __declspec(dllimport)
+#endif
+#else
+#define QTEXPANDERWIDGET_DLLIMPEXP __attribute__ ((visibility ("default")))
+#endif
+
+class QTEXPANDERWIDGET_DLLIMPEXP ExpanderWidget : public QWidget
 {
     Q_OBJECT
     Q_PROPERTY(QString expanderTitle READ expanderTitle WRITE setExpanderTitle STORED true)

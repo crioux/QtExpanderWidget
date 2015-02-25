@@ -1,0 +1,30 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.0.0 FATAL_ERROR)
+
+PROJECT(QtExpanderWidget)
+
+SET(CMAKE_AUTOMOC ON)
+SET(CMAKE_AUTORCC ON)
+SET(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+FIND_PACKAGE(Qt5Core REQUIRED)
+FIND_PACKAGE(Qt5Widgets REQUIRED)
+
+SET(QtExpanderWidget_SOURCES 
+	expanderwidget.cpp
+)
+
+SET(QtExpanderWidget_HEADERS
+	expanderwidget.h
+)
+
+SET(QtExpanderWidget_RESOURCES
+	res.qrc
+)
+
+QT5_ADD_RESOURCES(ResourceSources ${QtExpanderWidget_RESOURCES})
+
+ADD_DEFINITIONS(-DQTEXPANDERWIDGET_EXPORT=1)
+
+ADD_LIBRARY(QtExpanderWidget SHARED ${QtExpanderWidget_SOURCES} ${QtExpanderWidget_HEADERS} )
+
+TARGET_LINK_LIBRARIES(QtExpanderWidget Qt5::Core Qt5::Widgets)
