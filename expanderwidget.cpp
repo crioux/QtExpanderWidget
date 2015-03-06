@@ -20,7 +20,6 @@ ExpanderWidget::ExpanderWidget(QWidget *parent, bool in_designer)
     m_button->setFlat(true);
 	m_button->setCheckable(true);
 	m_button->setChecked(true);
-    m_button->setStyleSheet("text-align: left; font-weight: bold; border: none;");
 	m_button->setIcon(m_expandedIcon);
 	
     connect(m_button, SIGNAL(clicked()), this, SLOT(buttonPressed()));
@@ -53,7 +52,6 @@ void ExpanderWidget::buttonPressed()
 		QSettings settings;
 		settings.setValue(m_settingsKey,m_expanded);
 	}
-	
 	
 	QSize size = m_layout->sizeHint();
 	int width = size.width();

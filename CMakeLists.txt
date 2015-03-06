@@ -25,6 +25,6 @@ QT5_ADD_RESOURCES(ResourceSources ${QtExpanderWidget_RESOURCES})
 
 ADD_DEFINITIONS(-DQTEXPANDERWIDGET_EXPORT=1)
 
-ADD_LIBRARY(QtExpanderWidget SHARED ${QtExpanderWidget_SOURCES} ${QtExpanderWidget_HEADERS} )
+ADD_LIBRARY(QtExpanderWidget SHARED ${QtExpanderWidget_SOURCES} ${QtExpanderWidget_HEADERS} ${QtExpanderWidget_RESOURCES} )
 
 TARGET_LINK_LIBRARIES(QtExpanderWidget Qt5::Core Qt5::Widgets)
